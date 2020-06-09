@@ -1,6 +1,9 @@
 {
   "name": "microblog",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.4.0"
+  },
   "description": "Backend for MicroBlog exercise",
   "main": "server.js",
   "scripts": {
