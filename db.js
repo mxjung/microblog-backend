@@ -16,12 +16,12 @@ if (process.env.NODE_ENV === "test") {
   DB_URI = process.env.DATABASE_URL || 'microblog';
 }
 
-const client = new Client({
+console.log('Connected to DB_URL: ', DB_URI);
+
+const db = new Client({
   connectionString: DB_URI,
 });
 
-console.log("DATABASE_URL is: ", DB_URI)
-client.connect();
+db.connect();
 
-
-module.exports = client;
+module.exports = db;

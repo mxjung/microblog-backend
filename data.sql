@@ -1,8 +1,14 @@
-DROP DATABASE IF EXISTS "microblog";
+-- DROP DATABASE IF EXISTS "microblog";
+-- CREATE DATABASE "microblog";
+-- \c "microblog"
 
-CREATE DATABASE "microblog";
+-- These 3 commands up top will not work with heroku
+-- with heroku, just run
+-- heroku pg:psql < data.sql
 
-\c "microblog"
+-- added to drop tables if exists
+DROP TABLE IF EXISTS comments;
+DROP TABLE IF EXISTS posts;
 
 CREATE TABLE posts (id SERIAL PRIMARY KEY,
                     title TEXT NOT NULL,
@@ -20,5 +26,6 @@ INSERT INTO posts (title, description, body) VALUES
 
 INSERT INTO comments (text, post_id) VALUES
     ('This is a really great post.', 1),
-    ('I learned so much reading this.', 1);
+    ('I learned so much reading this.', 1),
+    ('New comment added for the heck of it.', 2);
 

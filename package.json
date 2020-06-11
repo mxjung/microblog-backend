@@ -5,11 +5,12 @@
     "node": "14.4.0",
     "npm": "6.14.4"
   },
-  "description": "Backend for MicroBlog exercise",
+  "description": "Backend for MicroBlog",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "seed": "dropdb microblog && createdb microblog && node seed.js"
   },
   "keywords": [],
   "author": "",
